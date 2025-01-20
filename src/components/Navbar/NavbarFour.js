@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { FiSearch, FiShoppingCart, FiMenu } from 'react-icons/fi';
-// import './Navbar.css';
+import { Menu, Search } from 'lucide-react';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     return (
         <nav>
@@ -32,22 +31,22 @@ const Navbar = () => {
                 <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors duration-300">Shop</a>
                 <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors duration-300">New Arrivals</a>
                 <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors duration-300">Sale</a>
+                <div className="flex items-center space-x-4">
                   <button className="text-gray-700 hover:text-blue-600">
-                    <FiSearch size={20} />
+                    <Search size={20} />
                   </button>
                   <button className="text-gray-700 hover:text-blue-600">
-                    <FiShoppingCart size={20} />
+                    <ShoppingCart size={20} />
                   </button>
-                
                 </div>
               </div>
+              
               <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-                <FiMenu />
+                <Menu />
               </button>
-             
             </div>
           </div>
-
+        </div>
         
         {/* Mobile Menu */}
         <div className={`md:hidden transition-all duration-300 ${isOpen ? 'max-h-screen' : 'max-h-0 overflow-hidden'}`}>
